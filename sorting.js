@@ -106,7 +106,7 @@ function startMergeSort(array){
   var color = {};
   var data = array.slice();
   states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
-  data = mergeSort(data, states, color);
+  data = mergeSort(data, states, color, data);
   states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
   return states;
 }
@@ -114,7 +114,7 @@ function startMergeSort(array){
 /*
  * MergeSort sorting algorithm
  */
-function mergeSort(data, states, color) {
+function mergeSort(data, states, color, originalData) {
     if (data.length < 2) {
         return data;
     }
@@ -122,46 +122,63 @@ function mergeSort(data, states, color) {
     var left = data.slice(0, mid);
     var right = data.slice(mid, data.length);
 
-    return merge(mergeSort(left, states, color), mergeSort(right, states, color), data, states, color);
+//    console.log("ORIGINAL DATA:" + originalData)
+    return merge(mergeSort(left, states, color, originalData), mergeSort(right, states, color, originalData), data, originalData, states, color);
 }
 
 /*
  * Helper function for MergeSort
  */
-function merge(left, right, data, states, color) {
+function merge(left, right, data, originalData, states, color) {
     var result = [];
-    var len = data.length;
-    var lenCounter = 0;
+
+    console.log("LEFT: " + left);
+    console.log("RIGHT: " + right);
     
+    // This while loop iterates through left and right sub-arrays only to store sorted values
+    // into result array, therefore result array is where we find the changes of data location.
     while (left.length && right.length) {
         if (left[0] <= right[0]) {
             result.push(left.shift());
-            data[lenCounter] = result[lenCounter];
-// Will possibly have to store colors for each shift.
-            states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
+           // console.log("\nLeft push");
         } else {
             result.push(right.shift());
-            data[lenCounter] = result[lenCounter];
-            // Will possibly have to store colors for each shift.
-            states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
+            //console.log("\nRight push");
         }
-        ++lenCounter;
+        //console.log("\nRESULTS: " + result);
     }
 
     while (left.length) {
         result.push(left.shift());
-        data[lenCounter] = result[lenCounter];
-        // Will possibly have to store colors for each shift.
-        states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
+        //console.log("\nLeft Push\nRESULTS: " + result);
     }
 
     while (right.length) {
         result.push(right.shift());
-        data[lenCounter] = result[lenCounter];
-        // Will possibly have to store colors for each shift.
-        states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
+        //console.log("\nRight Push\nRESULTS: " + result);
     }
 
+    // Fill up results array to perform comparison swap in for loop below.
+//    for (var jojo = result.length; jojo < originalData.length; jojo++) {
+//        result.push(originalData[jojo]);
+//    }
+    //console.log("Result is AFTER: " + result);
+    
+    //console.log("Data is: " + data);
+    
+    // For loop comparison from data and results to detect changes,
+    // any changes detected will account for swaps in data array and will be pushed as state
+    if (result.length > 2) {
+        for (var index = 0; index < data.length; index++) {
+            if (originalData[index] != result[index]) {
+                originalData[index] = result[index];
+            }   
+        }
+        states.push(new State(originalData.slice(), JSON.parse(JSON.stringify(color))));
+    }
+    
+    // Maybe divide amongst left side and right side?
+    
     return result;
 }
 
