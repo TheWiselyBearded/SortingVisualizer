@@ -101,20 +101,10 @@ function selectionSort(array) {
     return states;
 }
 
-function startMergeSort(array){
-  var states = [];
-  var color = {};
-  var data = array.slice();
-  states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
-  data = mergeSort(data, states, color);
-  states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
-  return states;
-}
-
 /*
 * MergeSort sorting algorithm
 */
-function mergeSort(data, states, color) {
+function mergeSort(data) {
     if (data.length < 2) {
         return data;
     }
@@ -122,13 +112,13 @@ function mergeSort(data, states, color) {
     var left = data.slice(0,mid);
     var right = data.slice(mid, data.length);
 
-    return merge(mergeSort(left, states, color), mergeSort(right, states, color));
+    return merge(mergeSort(left), mergeSort(right));
 }
 
 /*
 * Helper function for MergeSort
 */
-function merge(left, right, states, color) {
+function merge(left, right) {
     var result = [];
 
     while (left.length && right.length) {
@@ -138,20 +128,14 @@ function merge(left, right, states, color) {
         else {
             result.push(right.shift());
         }
-        // Will possibly have to store colors for each shift.
-//        states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
     }
 
     while(left.length) {
         result.push(left.shift());
-            // Will possibly have to store colors for each shift.
-//        states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
     }
 
     while(right.length) {
         result.push(right.shift());
-                // Will possibly have to store colors for each shift.
-//        states.push(new State(data.slice(), JSON.parse(JSON.stringify(color))));
     }
 
     return result;

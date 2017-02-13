@@ -59,7 +59,6 @@
                     <button id="comb" class="alg waves-effect waves-light btn blue-grey">Comb</button>
                     <button id="insertion" class="alg waves-effect waves-light btn blue-grey">Insertion</button>
                     <button id="quick" class="alg waves-effect waves-light btn blue-grey">Quick</button>
-                    <button id="merge" class="alg waves-effect waves-light btn blue-grey">Merge</button>
                 </div>
             </div>
             <div class="row">
@@ -288,16 +287,6 @@
             enableAllButtons();
             $("#quick").addClass("disabled");
             states = startQuickSort(states[currentState].data, 0, states[currentState].data.length - 1);
-            $("#currentState").prop('max', states.length - 1);
-        });
-        
-        // Merge Sort
-        obj = document.getElementById("merge");
-        obj.addEventListener("click", function () {
-            $("#reset").trigger("click");
-            enableAllButtons();
-            $("#merge").addClass("disabled");
-            states = startMergeSort(states[currentState].data, 0, states[currentState].data.length - 1);
             $("#currentState").prop('max', states.length - 1);
         });
 
