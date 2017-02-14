@@ -171,7 +171,7 @@
 
         //Draws the state passed as a parameter
         function draw(state) {
-//            console.log("Redrawing");
+            console.log("Redrawing");
             two.clear();
             //iterate through and draw it
             var max = Math.max(...state.data);
@@ -196,18 +196,18 @@
 
         function playBack() {
             runner = setInterval(function() {
-//                console.log("stepping " + currentState);
+                console.log("stepping " + currentState);
                 stepBack();
             }, delay);
-//            console.log("starting");
+            console.log("starting");
         }
 
         function start() {
             runner = setInterval(function() {
-//                console.log("stepping " + currentState);
+                console.log("stepping " + currentState);
                 stepNext();
             }, delay);
-//            console.log("starting");
+            console.log("starting");
         }
 
         function stop() {
@@ -224,7 +224,7 @@
             draw(states[currentState]);
             $("#currentState").val(currentState);
             if (currentState == states.length - 1) {
-//                console.log("STOP NOW PLS");
+                console.log("STOP NOW PLS");
                 stop();
             }
         }
@@ -237,7 +237,7 @@
             draw(states[currentState]);
             $("#currentState").val(currentState);
             if (currentState == 0) {
-//                console.log("STOP NOW PLS");
+                console.log("STOP NOW PLS");
                 stop();
             }
         }
