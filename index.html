@@ -89,102 +89,147 @@
             <div class="row">
                 <ul class="collapsible popout" data-collapsible="accordion">
                     <li>
-                        <div class="collapsible-header">Bubble Sort</div>
+                        <div class="collapsible-header" style="background-color: #fae400">Bubble Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n)</p>
+                                <p class="average" style="background-color: #fee446">Average: O(n<sup>2</sup>)</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n<sup>2</sup>)</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list. Although the algorithm is simple, it is too slow and impractical for most problems even when compared to insertion sort. It can be practical if the input is usually in sorted order but may occasionally have some out-of-order elements nearly in position.</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Selection Sort</div>
+                        <div class="collapsible-header" style="background-color: #f2dd00">Selection Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n<sup>2</sup>)</p>
+                                <p class="average" style="background-color: #fee446">Average: O(n<sup>2</sup>)</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n<sup>2</sup>)</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">In computer science, selection sort is a sorting algorithm, specifically an in-place comparison sort. It has O(n<sup>2</sup>) time complexity, making it inefficient on large lists, and generally performs worse than the similar insertion sort. The algorithm divides the input list into two parts: the sublist of items already sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining to be sorted that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Cocktail Shaker Sort</div>
+                        <div class="collapsible-header" style="background-color: #e9d500">Cocktail Shaker Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n<sup>2</sup>)</p>
+                                <p class="average" style="background-color: #fee446">Average: O(n<sup>2</sup>)</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n<sup>2</sup>)</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">Cocktail shaker sort, also known as bidirectional bubble sort, cocktail sort, martini sort, shaker sort (which can also refer to a variant of selection sort), ripple sort, shuffle sort, or shuttle sort, is a variation of bubble sort that is both a stable sorting algorithm and a comparison sort. The algorithm differs from a bubble sort in that it sorts in both directions on each pass through the list. This sorting algorithm is only marginally more difficult to implement than a bubble sort, and solves the problem of turtles in bubble sorts. It provides only marginal performance improvements, and does not improve asymptotic performance; like the bubble sort, it is not of practical interest (insertion sort is preferred for simple sorts), though it finds some use in education.</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Comb Sort</div>
+                        <div class="collapsible-header" style="background-color: #dbc800">Comb Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n<sup>2</sup></p>
+                                <p class="average" style="background-color: #fee446">Average: O(n<sup>2</sup> / 2<sup>p</sup>)</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n log(n))</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">The basic idea is to eliminate turtles, or small values near the end of the list, since in a bubble sort these slow the sorting down tremendously. Rabbits, large values around the beginning of the list, do not pose a problem in bubble sort.
+                                
+                                In bubble sort, when any two elements are compared, they always have a gap (distance from each other) of 1. The basic idea of comb sort is that the gap can be much more than 1. The inner loop of bubble sort, which does the actual swap, is modified such that gap between swapped elements goes down (for each iteration of outer loop) in steps of a "shrink factor" k: [ n/k, n/k2, n/k3, ..., 1 ].</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Insertion Sort</div>
+                        <div class="collapsible-header" style="background-color: #d4c100">Insertion Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n)</p>
+                                <p class="average" style="background-color: #fee446">Average: O(n<sup>2</sup>)</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n<sup>2</sup>)</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">Insertion sort iterates, consuming one input element each repetition, and growing a sorted output list. Each iteration, insertion sort removes one element from the input data, finds the location it belongs within the sorted list, and inserts it there. It repeats until no input elements remain.</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Quicksort</div>
+                        <div class="collapsible-header" style="background-color: #cab800">Quicksort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n log(n))</p>
+                                <p class="average" style="background-color: #fee446">Average: O(n<sup>2</sup>)</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n log(n))</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">Quicksort is a divide and conquer algorithm. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
+
+                                    <br></br>The steps are:<br></br>
+
+                                    <b>1.</b> Pick an element, called a pivot, from the array.<br></br>
+                                    
+                                    <b>2.</b> Partitioning: reorder the array so that all elements with values less than the pivot come before the pivot, while all elements with values greater than the pivot come after it (equal values can go either way). After this partitioning, the pivot is in its final position. This is called the partition operation.<br></br>
+                                    
+                                    <b>3.</b> Recursively apply the above steps to the sub-array of elements with smaller values and separately to the sub-array of elements with greater values.<br></br>
+                                    
+                                The base case of the recursion is arrays of size zero or one, which never need to be sorted.
+
+                                The pivot selection and partitioning steps can be done in several different ways; the choice of specific implementation schemes greatly affects the algorithm's performance.</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Radix Sort</div>
+                        <div class="collapsible-header" style="background-color: #beae00">Radix Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(nk)</p>
+                                <p class="average" style="background-color: #fee446">Average: O(nk)</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(nk)</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">In computer science, radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by the individual digits which share the same significant position and value. A positional notation is required, but because integers can represent strings of characters (e.g., names or dates) and specially formatted floating point numbers, radix sort is not limited to integers.</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Heap Sort</div>
+                        <div class="collapsible-header" style="background-color: #b2a200">Heap Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n log(n))</p>
+                                <p class="average" style="background-color: #fee446">Average: O(n log(n))</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n log(n))</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">The heapsort algorithm involves preparing the list by first turning it into a max heap. The algorithm then repeatedly swaps the first value of the list with the last value, decreasing the range of values considered in the heap operation by one, and sifting the new first value into its position in the heap. This repeats until the range of considered values is one value in length.<br></br>
+
+                                The steps are:<br></br>
+
+                                <b>1.</b> Call the buildMaxHeap() function on the list. Also referred to as heapify(), this builds a heap from a list in O(n) operations.<br></br>
+                                <b>2.</b> Swap the first element of the list with the final element. Decrease the considered range of the list by one.<br></br>
+                                <b>3.</b> Call the siftDown() function on the list to sift the new first element to its appropriate index in the heap.<br></br>
+                                <b>4.</b> Go to step (2) unless the considered range of the list is one element.<br></br>
+                                
+                                The buildMaxHeap() operation is run once, and is O(n) in performance. The siftDown() function is O(log(n)), and is called n times. Therefore, the performance of this algorithm is O(n + n * log(n)) which evaluates to O(n log n).</p>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div class="collapsible-header">Merge Sort</div>
+                        <div class="collapsible-header" style="background-color: #a49500">Merge Sort</div>
                         <div class="collapsible-body">
                             <div class="complexity">
-                                <p class="worst">O(?)</p>
-                                <p class="best">O(?)</p>
-                                <p class="average">O(?)</p>
+                                <p class="worst" style="background-color: #faebb4">Worst: O(n log(n))</p>
+                                <p class="average" style="background-color: #fee446">Average: O(n log(n))</p>
+                                <p class="best" style="background-color: #fdc02f">Best: O(n log(n))</p>
                             </div>
-                            <div class="explanation"></div>
+                            <div class="explanation">
+                                <p align=left style="background-color: #fef8b8">
+                                    Conceptually, a merge sort works as follows:<br></br>
+
+                                    <b>1. </b>Divide the unsorted list into n sublists, each containing 1 element (a list of 1 element is considered sorted).<br></br>
+                                    <b>2. </b>Repeatedly merge sublists to produce new sorted sublists until there is only 1 sublist remaining. This will be the sorted list.</p>
+                            </div>
                         </div>
                     </li>
                 </ul>
